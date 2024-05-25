@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Oswald", sans-serif;
+        }
+        #item-1,
+        #item-2,
+        #item-3,
+        #item-4,
+        #item-5,
+        #item-6 {
+            background-color: rgba(255, 208, 18, 0.852);
+            border: 5px solid rgb(255, 145, 0);
+            border-radius: 5px;
+            padding: 20px;
+        }
+        #item-1{
+            grid-area: header;
+        }
+        #item-2{
+            grid-area: nav;
+            display: flex;
+            flex-direction: column;
+        }
+        #item-3{
+            grid-area: main;
+        }
+        #item-4{
+            grid-area: sidebar;
+        }
+        #item-5{
+            grid-area: advertising;
+        }
+        #item-6{
+            grid-area: footer;
+        }
+        
+        .container{
+            display: grid;
+            grid-template-areas: 
+            "header  header  header"
+            "nav     main    sidebar"
+            "nav     main    advertising"
+            "footer  footer  footer"
+            ;
+            gap: 20px;
+        }
+        @media screen and (max-width: 576px) {
+            .container{
+                grid-template-areas: 
+                "header"
+                "nav"
+                "main"
+                "sidebar"
+                "advertising"
+                "footer"
+                ;
+            }   
+        }
+        @media screen and (min-width: 576px) and (max-width: 992px) {
+            .container{
+                grid-template-areas: 
+                "header header"
+                "nav nav"
+                "sidebar main"
+                "advertising footer";
+            }
+            #item-2{
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="item-1">
+            <h1> The Header</h1>
+        </div>
+        <div id="item-2">
+            <a href="http://">Nav - 1</a>
+            <a href="http://">Nav - 2</a>
+            <a href="http://">Nav - 3</a>
+        </div>
+        <div id="item-3">
+            <h1>Main Article area</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus animi ullam nemo provident soluta
+                laboriosam amet qui eveniet reiciendis. Quam corrupti optio velit vel saepe quis recusandae. Non illo
+                corrupti dolorem porro repellat in vel. Illum animi dolor pariatur iste.</p>
+        </div>
+        <div id="item-4">
+            <h1>Sidebar</h1>
+        </div>
+        <div id="item-5">
+            <h1>Advertising</h1>
+        </div>
+        <div id="item-6">
+            <h1>The Fotter</h1>
+        </div>
+    </div>
+</body>
+
+</html>

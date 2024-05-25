@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Span</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: 3fr 3fr 3fr 0.5fr 0.5fr;
+            gap: 20px;
+            height: 600px;
+        }
+        .container div{
+            background-color: gray;
+        }
+        .item-6, .item-7, .item-9, .item-10{
+            background-color: tomato !important; 
+        }
+        .item-1{
+            grid-row: span 5; 
+        }
+        .item-11 , .item-12{
+            grid-column: span 3;
+            grid-row: span;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item-1"></div>
+        <div class="item-2"></div>
+        <div class="item-3"></div>
+        <div class="item-4"></div>
+        <div class="item-5"></div>
+        <div class="item-6"></div>
+        <div class="item-7"></div>
+        <div class="item-8"></div>
+        <div class="item-9"></div>
+        <div class="item-10"></div>
+        <div class="item-11"></div>
+        <div class="item-12"></div>
+    </div>
+</body>
+</html>
